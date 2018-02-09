@@ -59,5 +59,3 @@ window.onload=drawTable('div4');
 window.onload=drawTable('div5');
 
 </script>
-
-

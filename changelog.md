@@ -12,7 +12,6 @@ Sam:    Created Change Log
 Martin: Added CSV files under system/database/
 Martin: Added CSV models under application/models/
 Martin: Added info on gear categories to the readme
-Sam:    Created template table for catalog
 Josh:   Added Welcome landing page
 Josh:   Created navigation bar
 Josh:   Updated welcome page. Contains buttons and placeholder images.
@@ -25,3 +24,4 @@ Josh:   Updated welcome page to have dropdowns on armour pieces rather than butt
 Josh:   Created and linked a JavaScript sheet located at /assets/scripts
 Josh:   Added functionality to Select Set button
 Josh:   Added this line to test webhook update
+Josh:   Moved navigation bar to template.php
