@@ -1,3 +1,9 @@
+<script>
+    window.addEventListener('load',
+            function () {
+                document.getElementById("catalogLink").classList.add("active");
+            }, false);
+</script>
 <h2 class="catalogHeader">Headgear</h2>
 <div id="div1"></div>
 <h2 class="catalogHeader">Weapon</h2>
