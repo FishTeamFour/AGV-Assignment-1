@@ -32,7 +32,16 @@ var cellsInRow = 5;
         var imageRow = document.createElement("tr");
         for (var i = 0; i < cellsInRow; i++) {
             var imageCell = document.createElement("th");
-            imageCell.style.backgroundImage = "url('/assets/images/headgear1.PNG')";
+            
+            var image = document.createElement("img");
+            //imageCell.style.backgroundImage = "url('/assets/images/headgear1.PNG')";
+            //image.src = "url('/assets/images/headgear1.PNG')";
+            image.src = "/assets/images/headgear1.PNG";
+            image.alt = "image";
+            image.width = "128";
+            image.height = "128";
+            
+            imageCell.appendChild(image);
             imageRow.appendChild(imageCell);
         }
         tbl.appendChild(imageRow);

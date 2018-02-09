@@ -25,4 +25,5 @@ Josh:   Created and linked a JavaScript sheet located at /assets/scripts
 Josh:   Added functionality to Select Set button
 Josh:   Added this line to test webhook update
 Josh:   Moved navigation bar to template.php
+Sam:    Fixed image bug in catalog
 Martin: Added about page
