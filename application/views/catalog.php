@@ -6,13 +6,13 @@
 </script>
 <h1>Headgear</h1>
 <div id="div1"></div>
-<h1>Weapon</h1>
-<div id="div2"></div>
 <h1>Armor</h1>
-<div id="div3"></div>
-<h1>Offhand</h1>
-<div id="div4"></div>
+<div id="div2"></div>
 <h1>Footwear</h1>
+<div id="div3"></div>
+<h1>Weapon</h1>
+<div id="div4"></div>
+<h1>Offhand</h1>
 <div id="div5"></div>
 
 <script>
