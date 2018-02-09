@@ -12,3 +12,6 @@ Sam:    Created Change Log
 Martin: Added CSV files under system/database/
 Martin: Added CSV models under application/models/
 Martin: Added info on gear categories to the readme
+Josh:   Added Welcome landing page
+Josh:   Created navigation bar
+Josh:   Updated welcome page. Contains buttons and placeholder images.
