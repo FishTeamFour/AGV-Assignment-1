@@ -18,8 +18,11 @@ Josh:   Updated welcome page. Contains buttons and placeholder images.
 Martin: Added images of gear under application/images
 Martin: Added filename to CSV files
 Sam:    Created template table for catalog
+Sam:    Added template tables for catalog page
 Josh:   Moved images folder from /application to /public/assets
 Josh:   Updated welcome page to have dropdowns on armour pieces rather than buttons
 Josh:   Created and linked a JavaScript sheet located at /assets/scripts
 Josh:   Added functionality to Select Set button
 Josh:   Added this line to test webhook update
+Josh:   Moved navigation bar to template.php
+Martin: Added about page
