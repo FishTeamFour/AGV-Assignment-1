@@ -1,7 +1,7 @@
 <div>
     <ul>
         <li><a class="active" href="/welcome">Home</a></li>
-        <li><a class="myA" href="#">Catalog</a></li>
+        <li><a class="myA" href="/catalog">Catalog</a></li>
         <li><a class="myA" href="#">About</a></li>
     </ul>
 </div>
