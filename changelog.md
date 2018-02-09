@@ -28,3 +28,4 @@ Josh:   Moved navigation bar to template.php
 Sam:    Fixed image bug in catalog
 Martin: Added about page
 Sam:    Updated css on catalog page
+Sam:    Changed order of catalog headers
