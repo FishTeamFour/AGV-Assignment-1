@@ -168,7 +168,10 @@ li a:hover {
 }
 
 .outfit {
-    background-image: url(/../../public/assets/images/outline.jpg);
+    background-image: url("/assets/images/characterTemplate.PNG");
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 275px 300px;
 }
 
 .catalogHeader {
@@ -178,8 +181,4 @@ li a:hover {
 
 table, tr, th, td {
     text-align: center;
-    background-image: url("/assets/images/characterTemplate.PNG");
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: 275px 300px;
 }
