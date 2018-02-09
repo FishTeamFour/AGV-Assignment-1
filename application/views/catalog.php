@@ -4,15 +4,15 @@
                 document.getElementById("catalogLink").classList.add("active");
             }, false);
 </script>
-<h2 class="catalogHeader">Headgear</h2>
+<h1>Headgear</h1>
 <div id="div1"></div>
-<h2 class="catalogHeader">Weapon</h2>
+<h1>Weapon</h1>
 <div id="div2"></div>
-<h2 class="catalogHeader">Armor</h2>
+<h1>Armor</h1>
 <div id="div3"></div>
-<h2 class="catalogHeader">Offhand</h2>
+<h1>Offhand</h1>
 <div id="div4"></div>
-<h2 class="catalogHeader">Footwear</h2>
+<h1>Footwear</h1>
 <div id="div5"></div>
 
 <script>
