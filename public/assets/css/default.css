@@ -174,18 +174,12 @@ li a:hover {
 }
 
 .outfit {
-    background-image: url(/../../public/assets/images/outline.jpg);
-}
-
-.catalogHeader {
-    font-family: "Times New Roman", Times, serif;    
-    font-weight: bold;
+    text-align: center;
+    background-image: url("/assets/images/characterTemplate.PNG");
+    background-repeat: no-repeat;
+    background-size: 275px 300px;
 }
 
 table, tr, th, td {
-    text-align: center;
-    background-image: url("/assets/images/characterTemplate.PNG");
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: 275px 300px;
+    text-align: left;
 }
