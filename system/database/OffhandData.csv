@@ -1,3 +1,3 @@
-OffhandID,Name,Description,Attack,Defense,Health
-1,Beginner's Shield,Tier 1 Shield,0,2,1
-2,Journeyman's Torch,Tier 3 Torch,2,0,2
+OffhandID,Name,Description,Attack,Defense,Health,Filename
+1,Novice's Shield,Tier 2 Shield,0,2,1,../application/images/offhand1.png
+2,Journeyman's Torch,Tier 3 Torch,2,0,2,../application/images/offhand2.png

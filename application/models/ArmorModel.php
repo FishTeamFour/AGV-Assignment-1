@@ -13,6 +13,6 @@
  */
 class ArmorModel extends CSV_Model{
     function __construct() {
-        parent::__construct('../system/database/ArmorData.csv','code');
+        parent::__construct('../system/database/ArmorData.csv','ArmorID');
     }
 }
