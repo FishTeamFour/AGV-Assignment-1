@@ -17,3 +17,4 @@ Josh:   Created navigation bar
 Josh:   Updated welcome page. Contains buttons and placeholder images.
 Martin: Added images of gear under application/images
 Martin: Added filename to CSV files
+Sam:    Created template table for catalog
