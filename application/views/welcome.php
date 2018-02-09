@@ -1,20 +1,3 @@
-<div>
-    <ul>
-        <li><a class="active" href="/welcome">Home</a></li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <li><a class="myA" href="/catalog">Catalog</a></li>
-        <li><a class="myA" href="#">About</a></li>
-=======
-        <li><a href="#">Catalog</a></li>
-        <li><a href="#">About</a></li>
->>>>>>> 760ba6b00235dc17f3a8d2df8d0d03cf040bd64d
-=======
-        <li><a href="/catalog">Catalog</a></li>
-        <li><a href="#">About</a></li>
->>>>>>> 27eab1393cf6dd2351cef9eb82892681b211ce9a
-    </ul>
-</div>
 <p></p>
 <table>
     <tr>

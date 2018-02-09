@@ -1,12 +1,13 @@
-<div>
-    <ul>
-        <li><a href="/welcome">Home</a></li>
-        <li><a class="active" href="/catalog">Catalog</a></li>
-        <li><a href="#">About</a></li>
-    </ul>
-</div>
 <h2 class="catalogHeader">Headgear</h2>
 <div id="div1"></div>
+<h2 class="catalogHeader">Weapon</h2>
+<div id="div2"></div>
+<h2 class="catalogHeader">Armor</h2>
+<div id="div3"></div>
+<h2 class="catalogHeader">Offhand</h2>
+<div id="div4"></div>
+<h2 class="catalogHeader">Footwear</h2>
+<div id="div5"></div>
 
 <script>
 var totalRows = 5;
@@ -21,6 +22,14 @@ var cellsInRow = 5;
         var tbl = document.createElement("table");
         
         var titles = ["Name", "Description", "Health", "Attack", "Defense"];
+        
+        var imageRow = document.createElement("tr");
+        for (var i = 0; i < cellsInRow; i++) {
+            var imageCell = document.createElement("th");
+            imageCell.style.backgroundImage = "url('/assets/images/headgear1.PNG')";
+            imageRow.appendChild(imageCell);
+        }
+        tbl.appendChild(imageRow);
  
         // creating rows
         for (var r = 0; r < totalRows; r++) {
@@ -29,14 +38,6 @@ var cellsInRow = 5;
 	     // create cells in row
              for (var c = 0; c < cellsInRow; c++) {
                 var cell = document.createElement("td");
-                
-                
-                
-                //PULL FROM UPSTREAM, CANT PULL UNTIL NO MERGE CONFLICTS THOUGH
-                
-                
-                
-                
                 if (c === 0) {
                     var cellText = document.createTextNode(titles[r]);
                 } else {
@@ -52,6 +53,11 @@ var cellsInRow = 5;
      divId.appendChild(tbl); // appends <table> into <div1>
 }
 window.onload=drawTable('div1'); 
+window.onload=drawTable('div2'); 
+window.onload=drawTable('div3');
+window.onload=drawTable('div4');
+window.onload=drawTable('div5');
+
 </script>
 
 
