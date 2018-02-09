@@ -15,3 +15,5 @@ Martin: Added info on gear categories to the readme
 Josh:   Added Welcome landing page
 Josh:   Created navigation bar
 Josh:   Updated welcome page. Contains buttons and placeholder images.
+Martin: Added images of gear under application/images
+Martin: Added filename to CSV files
