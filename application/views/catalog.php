@@ -1,10 +1,9 @@
-<div>
-    <ul>
-        <li><a href="/welcome">Home</a></li>
-        <li><a class="active" href="/catalog">Catalog</a></li>
-        <li><a href="#">About</a></li>
-    </ul>
-</div>
+<script>
+    window.addEventListener('load',
+            function () {
+                document.getElementById("catalogLink").classList.add("active");
+            }, false);
+</script>
 <h2 class="catalogHeader">Headgear</h2>
 <div id="div1"></div>
 
