@@ -1,6 +1,12 @@
 ::selection { background-color: #E13300; color: white; }
 ::-moz-selection { background-color: #E13300; color: white; }
 
+#aboutp {
+    margin-left: 7em;
+    margin-right: 7em;
+    text-align: justify;
+}
+
 body {
     background-color: #fff;
     margin: 40px;
