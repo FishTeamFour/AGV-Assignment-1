@@ -1,9 +1,10 @@
-<script>
-    window.addEventListener('load',
-            function () {
-                document.getElementById("catalogLink").classList.add("active");
-            }, false);
-</script>
+<div>
+    <ul>
+        <li><a href="/welcome">Home</a></li>
+        <li><a class="active" href="/catalog">Catalog</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</div>
 <h2 class="catalogHeader">Headgear</h2>
 <div id="div1"></div>
 
@@ -28,6 +29,14 @@ var cellsInRow = 5;
 	     // create cells in row
              for (var c = 0; c < cellsInRow; c++) {
                 var cell = document.createElement("td");
+                
+                
+                
+                //PULL FROM UPSTREAM, CANT PULL UNTIL NO MERGE CONFLICTS THOUGH
+                
+                
+                
+                
                 if (c === 0) {
                     var cellText = document.createTextNode(titles[r]);
                 } else {
@@ -44,5 +53,3 @@ var cellsInRow = 5;
 }
 window.onload=drawTable('div1'); 
 </script>
-
-
