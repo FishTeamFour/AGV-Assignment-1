@@ -1,6 +1,12 @@
 ::selection { background-color: #E13300; color: white; }
 ::-moz-selection { background-color: #E13300; color: white; }
 
+#aboutp {
+    margin-left: 7em;
+    margin-right: 7em;
+    text-align: justify;
+}
+
 body {
     background-color: #fff;
     margin: 40px;
@@ -168,10 +174,7 @@ li a:hover {
 }
 
 .outfit {
-    background-image: url("/assets/images/characterTemplate.PNG");
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: 275px 300px;
+    background-image: url(/../../public/assets/images/outline.jpg);
 }
 
 .catalogHeader {
@@ -181,4 +184,9 @@ li a:hover {
 
 table, tr, th, td {
     text-align: center;
+    background-image: url("/assets/images/characterTemplate.PNG");
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 275px 300px;
+
 }
