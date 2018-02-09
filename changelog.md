@@ -9,3 +9,6 @@ Rules:
 Beginning Of ChangeLog
 --------------------------------------------------------------------------------
 Sam:    Created Change Log
+Josh:   Added Welcome landing page
+Josh:   Created navigation bar
+Josh:   Updated welcome page. Contains buttons and placeholder images.
