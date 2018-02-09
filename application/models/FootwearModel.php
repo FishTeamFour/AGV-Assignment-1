@@ -9,7 +9,7 @@
 /**
  * Description of FootwearModel
  *
- * @author crazy
+ * @author Martin Suryadi
  */
 class FootwearModel extends CSV_Model{
     function __construct() {

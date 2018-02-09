@@ -9,7 +9,7 @@
 /**
  * Description of OffhandModel
  *
- * @author crazy
+ * @author Martin Suryadi
  */
 class OffhandModel extends CSV_Model{
     function __construct() {

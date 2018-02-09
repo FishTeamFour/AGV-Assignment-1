@@ -9,7 +9,7 @@
 /**
  * Description of WeaponModel
  *
- * @author crazy
+ * @author Martin Suryadi
  */
 class WeaponModel extends CSV_Model{
     function __construct() {

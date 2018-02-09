@@ -9,7 +9,7 @@
 /**
  * Description of ArmorModel
  *
- * @author crazy
+ * @author Martin Suryadi
  */
 class ArmorModel extends CSV_Model{
     function __construct() {
