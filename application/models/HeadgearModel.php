@@ -13,6 +13,6 @@
  */
 class HeadgearModel extends CSV_Model{
     function __construct() {
-        parent::__construct('../system/database/HeadgearData.csv','code');
+        parent::__construct('../system/database/HeadgearData.csv','HeadgearID');
     }
 }
