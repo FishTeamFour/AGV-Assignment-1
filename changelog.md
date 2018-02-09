@@ -12,3 +12,4 @@ Sam:    Created Change Log
 Martin: Added CSV files under system/database/
 Martin: Added CSV models under application/models/
 Martin: Added info on gear categories to the readme
+Sam: Created template table for catalog
