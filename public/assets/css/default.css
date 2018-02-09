@@ -81,13 +81,17 @@ li:last-child {
 }
 
 .gear {
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
+    background-repeat: no-repeat;
+    background-size: 75px 75px;
 }
 
 .gear-body {
-    height: 50px;
-    width: 100px;
+    height: 90px;
+    width: 75px;
+    background-repeat: no-repeat;
+    background-size: 75px 90px;
 }
 
 li a {
@@ -107,12 +111,9 @@ li a:hover {
 .dropbtn {
     background-color: #4A9C44;
     color: white;
-    padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 200px;
-    height: 50px;
 }
 
 .dropbtn-set {
@@ -123,7 +124,7 @@ li a:hover {
     border: none;
     text-align: center;
     cursor: pointer;
-    width: 500px;
+    width: 275px;
     height: 50px;
 }
 
@@ -177,4 +178,8 @@ li a:hover {
 
 table, tr, th, td {
     text-align: center;
+    background-image: url("/assets/images/characterTemplate.PNG");
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 275px 300px;
 }
