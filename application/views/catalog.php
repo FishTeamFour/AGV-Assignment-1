@@ -53,5 +53,3 @@ var cellsInRow = 5;
 }
 window.onload=drawTable('div1'); 
 </script>
-
-

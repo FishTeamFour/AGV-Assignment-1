@@ -1,10 +1,9 @@
-<div>
-    <ul>
-        <li><a class="active" href="/welcome">Home</a></li>
-        <li><a href="/catalog">Catalog</a></li>
-        <li><a href="#">About</a></li>
-    </ul>
-</div>
+<script>
+    window.addEventListener('load',
+            function () {
+                document.getElementById("homeLink").classList.add("active");
+            }, false);
+</script>
 <div class="outfit">
     <div id="head">
         <table>
