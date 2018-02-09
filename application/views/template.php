@@ -14,7 +14,7 @@
                 <ul>
                     <li><a id="homeLink" href="/welcome">Home</a></li>
                     <li><a id="catalogLink" href="/catalog">Catalog</a></li>
-                    <li><a id="aboutLink" href="#">About</a></li>
+                    <li><a id="aboutLink" href="/about">About</a></li>
                 </ul>
             </div>
 
