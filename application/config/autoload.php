@@ -132,11 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array(
-    "armormodel",
-    "footwearmodel",
-    "headgearmodel",
-    "offhandmodel",
-    "setmodel",
-    "weaponmodel"
-);
+$autoload['model'] = array();
