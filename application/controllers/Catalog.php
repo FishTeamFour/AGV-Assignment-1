@@ -14,14 +14,14 @@ class Catalog extends Application{
             $this->data['pagebody'] = 'catalog';
             
             //Get Armor Data
-            $this->load->model('ArmorModel');
+            $this->load->model('../models/ArmorModel');
             $armorItems = $this->ArmorModel->all();
             $armorArray = array();
             
             foreach ($armorItems as $armorItem)
             {      
                 array_push($armorArray, array(
-                    "picture" => "<img src='" . $armorItem->Filename . "'>",
+                    "picture" => "<img style='width:192px;height:192px;' src='" . $armorItem->Filename . "' />",
                     "name" => $armorItem->Name,
                     "description" => $armorItem->Description, 
                     "attack" => $armorItem->Attack, 
@@ -40,7 +40,7 @@ class Catalog extends Application{
             foreach ($headItems as $headItem)
             {   
                 array_push($headArray, array(
-                    "picture" => "<img src='" . $headItem->Filename . "'>",
+                    "picture" => "<img style='width:192px;height:192px;' src='" . $headItem->Filename . "' />",
                     "name" => $headItem->Name,
                     "description" => $headItem->Description, 
                     "attack" => $headItem->Attack, 
@@ -59,7 +59,7 @@ class Catalog extends Application{
             foreach ($footItems as $footItem)
             {   
                 array_push($footArray, array(
-                    "picture" => "<img src='" . $footItem->Filename . "'>",
+                    "picture" => "<img style='width:192px;height:192px;' src='" . $footItem->Filename . "' />",
                     "name" => $footItem->Name,
                     "description" => $footItem->Description, 
                     "attack" => $footItem->Attack, 
@@ -78,7 +78,7 @@ class Catalog extends Application{
             foreach ($weaponItems as $weaponItem)
             {   
                 array_push($weaponArray, array(
-                    "picture" => "<img src='" . $weaponItem->Filename . "'>",
+                    "picture" => "<img style='width:192px;height:192px;' src='" . $weaponItem->Filename . "' />",
                     "name" => $weaponItem->Name,
                     "description" => $weaponItem->Description, 
                     "attack" => $weaponItem->Attack, 
@@ -97,7 +97,7 @@ class Catalog extends Application{
             foreach ($offhandItems as $offhandItem)
             {   
                 array_push($offhandArray, array(
-                    "picture" => "<img src='" . $offhandItem->Filename . "'>",
+                    "picture" => "<img style='width:192px;height:192px;' src='" . $offhandItem->Filename . "' />",
                     "name" => $offhandItem->Name,
                     "description" => $offhandItem->Description, 
                     "attack" => $offhandItem->Attack, 

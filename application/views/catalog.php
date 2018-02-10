@@ -6,66 +6,86 @@
 </script>
 <h1>Headgear</h1>
 <div id="headTable">
-    {headTable}
-    <div>
-        {picture}
-        {name}
-        {description}
-        {attack}
-        {defense}
-        {health}
-    </div>
-    {/headTable}
+    <table>
+        <tr>
+            {headTable}
+            <td style="width: 192px;">
+                {picture}<br/>
+                <div style="font-weight: 900;text-decoration: underline;">{name}</div>
+                ({description})<br/>
+                <p>Attack: {attack}<br/>
+                Defense: {defense}<br/>
+                Health: {health}</p><br/>
+            </td>
+            {/headTable}
+        </tr>
+    </table>
 </div>
 <h1>Armor</h1>
 <div id="armorTable">
-    {armorTable}
-    <div>
-        {picture}
-        {name}
-        {description}
-        {attack}
-        {defense}
-        {health}
-    </div>
-    {/armorTable}
+    <table>
+        <tr>
+            {armorTable}
+            <td style="width: 192px;">
+                {picture}<br/>
+                <div style="font-weight: 900;text-decoration: underline;">{name}</div>
+                ({description})<br/>
+                <p>Attack: {attack}<br/>
+                Defense: {defense}<br/>
+                Health: {health}</p><br/>
+            </td>
+            {/armorTable}
+        </tr>
+    </table>
 </div>
 <h1>Footwear</h1>
 <div id="footTable">
-    {footTable}
-    <div>
-        {picture}
-        {name}
-        {description}
-        {attack}
-        {defense}
-        {health}
-    </div>
-    {/footTable}
+    <table>
+        <tr>
+            {footTable}
+            <td style="width: 192px;">
+                {picture}<br/>
+                <div style="font-weight: 900;text-decoration: underline;">{name}</div>
+                ({description})<br/>
+                <p>Attack: {attack}<br/>
+                Defense: {defense}<br/>
+                Health: {health}</p><br/>
+            </td>
+            {/footTable}
+        </tr>
+    </table>
 </div>
-<h1>Weapon</h1>
+<h1>Weapons</h1>
 <div id="weaponTable">
-    {weaponTable}
-    <div>
-        {picture}
-        {name}
-        {description}
-        {attack}
-        {defense}
-        {health}
-    </div>
-    {/weaponTable}
+    <table>
+        <tr>
+            {weaponTable}
+            <td style="width: 192px;">
+                {picture}<br/>
+                <div style="font-weight: 900;text-decoration: underline;">{name}</div>
+                ({description})<br/>
+                <p>Attack: {attack}<br/>
+                Defense: {defense}<br/>
+                Health: {health}</p><br/>
+            </td>
+            {/weaponTable}
+        </tr>
+    </table>
 </div>
-<h1>Offhand</h1>
+<h1>Offhands</h1>
 <div id="offhandTable">
-    {offhandTable}
-    <div>
-        {picture}
-        {name}
-        {description}
-        {attack}
-        {defense}
-        {health}
-    </div>
-    {/offhandTable}
+    <table>
+        <tr>
+            {offhandTable}
+            <td style="width: 192px;">
+                {picture}<br/>
+                <div style="font-weight: 900;text-decoration: underline;">{name}</div>
+                ({description})<br/>
+                <p>Attack: {attack}<br/>
+                Defense: {defense}<br/>
+                Health: {health}</p><br/>
+            </td>
+            {/offhandTable}
+        </tr>
+    </table>
 </div>
