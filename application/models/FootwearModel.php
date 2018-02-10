@@ -13,6 +13,6 @@
  */
 class FootwearModel extends CSV_Model{
     function __construct() {
-        parent::__construct('../system/database/FootwearData.csv','FootwearID');
+        parent::__construct('assets/database/FootwearData.csv','FootwearID');
     }
 }
