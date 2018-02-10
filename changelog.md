@@ -28,4 +28,6 @@ Josh:   Moved navigation bar to template.php
 Sam:    Fixed image bug in catalog
 Martin: Added about page
 Sam:    Updated css on catalog page
+Sam:    Changed order of catalog headers
+Sam:    Data from csv files now dynamically load into the catalog tables
 Josh:   Welcome page shows stats and php calls work
