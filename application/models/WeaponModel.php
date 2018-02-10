@@ -13,6 +13,6 @@
  */
 class WeaponModel extends CSV_Model{
     function __construct() {
-        parent::__construct('../system/database/WeaponData.csv','code');
+        parent::__construct('assets/database/WeaponData.csv','WeaponID');
     }
 }
