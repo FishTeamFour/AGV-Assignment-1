@@ -13,6 +13,6 @@
  */
 class OffhandModel extends CSV_Model{
     function __construct() {
-        parent::__construct('../system/database/OffhandData.csv','OffhandID');
+        parent::__construct('assets/database/OffhandData.csv','OffhandID');
     }
 }
