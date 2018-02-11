@@ -31,3 +31,4 @@ Sam:    Updated css on catalog page
 Sam:    Changed order of catalog headers
 Sam:    Data from csv files now dynamically load into the catalog tables
 Cody:   Fixed Catalog Display/Merge Conflicts locally
+Sam:    Added info page and functions to retrieve a single entry
