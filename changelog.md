@@ -33,3 +33,4 @@ Sam:    Data from csv files now dynamically load into the catalog tables
 Cody:   Fixed Catalog Display/Merge Conflicts locally
 Sam:    Added info page and functions to retrieve a single entry
 Josh:   Updated website name to FishTeamFour - Assignment 1
+Josh:   Welcome page now loads set with JavaScript function to php code

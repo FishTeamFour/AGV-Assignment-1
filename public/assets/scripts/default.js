@@ -5,7 +5,7 @@
  */
 
 function selectSet1(){
-    var head = document.getElementById("headgear");
+    /*var head = document.getElementById("headgear");
     var weapon = document.getElementById("weapon");
     var armor = document.getElementById("armor");
     var offhand = document.getElementById("offhand");
@@ -15,11 +15,18 @@ function selectSet1(){
     weapon.style.backgroundImage = "url('/assets/images/weapon1.PNG')";
     armor.style.backgroundImage = "url('/assets/images/armor1.PNG')";
     offhand.style.backgroundImage = "url('/assets/images/offhand1.PNG')";
-    feet.style.backgroundImage = "url('/assets/images/footwear1.PNG')";
+    feet.style.backgroundImage = "url('/assets/images/footwear1.PNG')";*/
+    
+    var host = window.location.hostname;
+    var link = "http://";
+    host = link.concat(host);
+    host = host.concat("/welcome/getSet/1");
+    
+    window.location = host;
 }
 
 function selectSet2(){
-    var head = document.getElementById("headgear");
+    /*var head = document.getElementById("headgear");
     var weapon = document.getElementById("weapon");
     var armor = document.getElementById("armor");
     var offhand = document.getElementById("offhand");
@@ -29,5 +36,12 @@ function selectSet2(){
     weapon.style.backgroundImage = "url('/assets/images/weapon2.PNG')";
     armor.style.backgroundImage = "url('/assets/images/armor2.PNG')";
     offhand.style.backgroundImage = "url('/assets/images/offhand2.PNG')";
-    feet.style.backgroundImage = "url('/assets/images/footwear2.PNG')";
+    feet.style.backgroundImage = "url('/assets/images/footwear2.PNG')";*/
+    
+    var host = window.location.hostname;
+    var link = "http://";
+    host = link.concat(host);
+    host = host.concat("/welcome/getSet/2");
+    
+    window.location = host;
 }
