@@ -16,10 +16,11 @@
                                 <div style="height: 15px;">
                                 </div>
                                 <div class="dropdown">
-                                    <button id="headgear" class="gear dropbtn" style="background-image: url('/{headPath}');"></button>
+                                    <button id="headgear" class="gear dropbtn" value="{currHead}" style="background-image: url('/{headPath}');"></button>
                                     <div class="dropdown-content">
-                                        <a href="#">Option 1</a>
-                                        <a href="#">Option 2</a>
+                                        {head}
+                                        <a href="#" onclick="updateHead({id})">Option {idText}</a>
+                                        {/head}
                                     </div>
                                 </div>
                             </td>
@@ -34,10 +35,11 @@
                                 </div>
                                 <span style="margin-left: 10px; display: inline-block;"></span>
                                 <div class="dropdown">
-                                    <button id="weapon" class="gear dropbtn" style="background-image: url('/{weaponPath}');"></button>
+                                    <button  id="weapon" class="gear dropbtn" value="{currWeapon}" style="background-image: url('/{weaponPath}');"></button>
                                     <div class="dropdown-content">
-                                        <a href="#">Option 1</a>
-                                        <a href="#">Option 2</a>
+                                        {weapon}
+                                        <a href="#" onclick="updateWeapon({id})">Option {idText}</a>
+                                        {/weapon}
                                     </div>
                                 </div>
                             </td>
@@ -45,10 +47,11 @@
                                 <div style="height: 10px;">
                                 </div>
                                 <div class="dropdown">
-                                    <button id="armor" class="gear-body dropbtn" style="background-image: url('/{armorPath}');"></button>
+                                    <button id="armor" class="gear-body dropbtn" value="{currArmor}" style="background-image: url('/{armorPath}');"></button>
                                     <div class="dropdown-content">
-                                        <a href="#">Option 1</a>
-                                        <a href="#">Option 2</a>
+                                        {armor}
+                                        <a href="#" onclick="updateArmor({id})">Option {idText}</a>
+                                        {/armor}
                                     </div>
                                 </div>
                             </td>
@@ -56,10 +59,11 @@
                                 <div style="height: 35px;">
                                 </div>
                                 <div class="dropdown">
-                                    <button id="offhand" class="gear dropbtn" style="background-image: url('/{offhandPath}');"></button>
+                                    <button id="offhand" class="gear dropbtn" value="{currOffhand}" style="background-image: url('/{offhandPath}');"></button>
                                     <div class="dropdown-content">
-                                        <a href="#">Option 1</a>
-                                        <a href="#">Option 2</a>
+                                        {offhand}
+                                        <a href="#" onclick="updateOffhand({id})">Option {idText}</a>
+                                        {/offhand}
                                     </div>
                                 </div>
                             </td>
@@ -72,10 +76,11 @@
                             <td><span style="margin-left: 88px; display: inline-block;"></span></td>
                             <td>
                                 <div class="dropdown">
-                                    <button id="footwear" class="gear dropbtn" style="background-image: url('/{footwearPath}');"></button>
+                                    <button id="footwear" class="gear dropbtn" value="{currFeet}" style="background-image: url('/{footwearPath}');"></button>
                                     <div class="dropdown-content">
-                                        <a href="#">Option 1</a>
-                                        <a href="#">Option 2</a>
+                                        {feet}
+                                        <a href="#" onclick="updateFeet({id})">Option {idText}</a>
+                                        {/feet}
                                     </div>
                                 </div>
                             </td>
@@ -118,9 +123,9 @@
     <div class="dropdown">
         <button class="dropbtn-set">Select Set</button>
         <div class="dropdown-content">
-            <a href="javascript:selectSet1()">Set 1</a>
-            <a href="javascript:selectSet2()">Set 2</a>
+            {set}
+            <a href="javascript:void(0)" onclick="selectSet({id})">Set {idText}</a>
+            {/set}
         </div>
     </div>
 </div>
-<div id="testDiv"></div>
