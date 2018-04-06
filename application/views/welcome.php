@@ -19,7 +19,7 @@
                                     <button id="headgear" class="gear dropbtn" value="{currHead}" style="background-image: url('/{headPath}');"></button>
                                     <div class="dropdown-content">
                                         {head}
-                                        <a href="#" onclick="updateHead({id})">Option {idText}</a>
+                                        <a href="#" onclick="updateHead({id})">{idText}</a>
                                         {/head}
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                     <button  id="weapon" class="gear dropbtn" value="{currWeapon}" style="background-image: url('/{weaponPath}');"></button>
                                     <div class="dropdown-content">
                                         {weapon}
-                                        <a href="#" onclick="updateWeapon({id})">Option {idText}</a>
+                                        <a href="#" onclick="updateWeapon({id})">{idText}</a>
                                         {/weapon}
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                     <button id="armor" class="gear-body dropbtn" value="{currArmor}" style="background-image: url('/{armorPath}');"></button>
                                     <div class="dropdown-content">
                                         {armor}
-                                        <a href="#" onclick="updateArmor({id})">Option {idText}</a>
+                                        <a href="#" onclick="updateArmor({id})">{idText}</a>
                                         {/armor}
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                                     <button id="offhand" class="gear dropbtn" value="{currOffhand}" style="background-image: url('/{offhandPath}');"></button>
                                     <div class="dropdown-content">
                                         {offhand}
-                                        <a href="#" onclick="updateOffhand({id})">Option {idText}</a>
+                                        <a href="#" onclick="updateOffhand({id})">{idText}</a>
                                         {/offhand}
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                                     <button id="footwear" class="gear dropbtn" value="{currFeet}" style="background-image: url('/{footwearPath}');"></button>
                                     <div class="dropdown-content">
                                         {feet}
-                                        <a href="#" onclick="updateFeet({id})">Option {idText}</a>
+                                        <a href="#" onclick="updateFeet({id})">{idText}</a>
                                         {/feet}
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
         <button class="dropbtn-set">Select Set</button>
         <div class="dropdown-content">
             {set}
-            <a href="javascript:void(0)" onclick="selectSet({id})">Set {idText}</a>
+            <a href="javascript:void(0)" onclick="selectSet({id})">{idText}</a>
             {/set}
         </div>
     </div>
