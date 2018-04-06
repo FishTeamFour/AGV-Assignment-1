@@ -35,3 +35,4 @@ Sam:    Added info page and functions to retrieve a single entry
 Josh:   Updated website name to FishTeamFour - Assignment 1
 Josh:   Welcome page now loads set with JavaScript function to php code
 Sam:    Info controller now displays all objects when none are specified
+Sam:    Added roles to nav bar
