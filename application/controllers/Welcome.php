@@ -32,7 +32,7 @@ class Welcome extends Application {
         foreach ($all_sets as $curr_set) {
             array_push($set_array, array(
                 "id" => $curr_set->SetID,
-                "idText" => $curr_set->SetID)
+                "idText" => $curr_set->Name)
             );
         }
         $this->data['set'] = $set_array;
@@ -44,10 +44,10 @@ class Welcome extends Application {
         foreach ($all_head as $curr_head) {
             array_push($head_array, array(
                 "id" => $curr_head->HeadgearID,
-                "idText" => $curr_head->HeadgearID)
+                "idText" => $curr_head->Name)
             );
         }
-        $this->data['head'] = $set_array;
+        $this->data['head'] = $head_array;
 
         $this->load->model('WeaponModel');
         $all_weapon = $this->WeaponModel->all();
@@ -56,7 +56,7 @@ class Welcome extends Application {
         foreach ($all_weapon as $curr_weapon) {
             array_push($weapon_array, array(
                 "id" => $curr_weapon->WeaponID,
-                "idText" => $curr_weapon->WeaponID)
+                "idText" => $curr_weapon->Name)
             );
         }
         $this->data['weapon'] = $weapon_array;
@@ -68,7 +68,7 @@ class Welcome extends Application {
         foreach ($all_armor as $curr_armor) {
             array_push($armor_array, array(
                 "id" => $curr_armor->ArmorID,
-                "idText" => $curr_armor->ArmorID)
+                "idText" => $curr_armor->Name)
             );
         }
         $this->data['armor'] = $armor_array;
@@ -80,7 +80,7 @@ class Welcome extends Application {
         foreach ($all_offhand as $curr_offhand) {
             array_push($offhand_array, array(
                 "id" => $curr_offhand->OffhandID,
-                "idText" => $curr_offhand->OffhandID)
+                "idText" => $curr_offhand->Name)
             );
         }
         $this->data['offhand'] = $offhand_array;
@@ -92,7 +92,7 @@ class Welcome extends Application {
         foreach ($all_feet as $curr_feet) {
             array_push($feet_array, array(
                 "id" => $curr_feet->FootwearID,
-                "idText" => $curr_feet->FootwearID)
+                "idText" => $curr_feet->Name)
             );
         }
         $this->data['feet'] = $feet_array;
