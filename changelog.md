@@ -36,3 +36,5 @@ Josh:   Updated website name to FishTeamFour - Assignment 1
 Josh:   Welcome page now loads set with JavaScript function to php code
 Sam:    Info controller now displays all objects when none are specified
 Sam:    Added roles to nav bar
+Josh:   Updated set and accessory dropdowns to  display names of sets/items
+Josh:   Server side validation for accessory and set changes
