@@ -38,3 +38,4 @@ Sam:    Info controller now displays all objects when none are specified
 Sam:    Added roles to nav bar
 Josh:   Updated set and accessory dropdowns to  display names of sets/items
 Josh:   Server side validation for accessory and set changes
+Sam:    Added Role controller
