@@ -103,6 +103,16 @@ class Welcome extends Application {
 
         $this->load->model('SetModel');
         $setData = $this->SetModel->get($id);
+        while ($setData == NULL) {
+            if ($id <= 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $setData = $this->SetModel->get($id);
+        }
         $head = $this->getHead($setData->HeadgearID);
         $weapon = $this->getWeapon($setData->WeaponID);
         $armor = $this->getArmor($setData->ArmorID);
@@ -112,55 +122,65 @@ class Welcome extends Application {
         $this->setCurrent($head, $weapon, $armor, $offhand, $feet);
         $this->loadObjects();
         $this->updateStats($head, $weapon, $armor, $offhand, $feet);
-        
+
         $this->render();
     }
-    
-    public function setCurrent($head, $weapon, $armor, $offhand, $feet){
+
+    public function setCurrent($head, $weapon, $armor, $offhand, $feet) {
         $this->data['currHead'] = $head->HeadgearID;
         $this->data['currWeapon'] = $weapon->WeaponID;
         $this->data['currArmor'] = $armor->ArmorID;
         $this->data['currOffhand'] = $offhand->OffhandID;
         $this->data['currFeet'] = $feet->FootwearID;
     }
-    
-    public function updateStats($head, $weapon, $armor, $offhand, $feet){
+
+    public function updateStats($head, $weapon, $armor, $offhand, $feet) {
         $this->data['atk'] = $head->Attack + $weapon->Attack + $armor->Attack + $offhand->Attack + $feet->Attack;
         $this->data['def'] = $head->Defense + $weapon->Defense + $armor->Defense + $offhand->Defense + $feet->Defense;
         $this->data['hp'] = $head->Health + $weapon->Health + $armor->Health + $offhand->Health + $feet->Health;
     }
-    
-    public function updateItem($id_list){
+
+    public function updateItem($id_list) {
         $ids = explode("-", $id_list);
         $this->updateGear($ids[0], $ids[1], $ids[2], $ids[3], $ids[4]);
     }
 
     public function updateGear($headID, $weaponID, $armorID, $offhandID, $feetID) {
         $this->data['pagebody'] = 'welcome';
-        
-        
+
+
         $this->load->model('HeadgearModel');
         $this->load->model('WeaponModel');
         $this->load->model('ArmorModel');
         $this->load->model('OffhandModel');
         $this->load->model('FootwearModel');
-        
+
         $head = $this->getHead($headID);
         $armor = $this->getArmor($armorID);
         $weapon = $this->getWeapon($weaponID);
         $offhand = $this->getOffhand($offhandID);
         $feet = $this->getFeet($feetID);
-        
+
         $this->setCurrent($head, $weapon, $armor, $offhand, $feet);
         $this->loadObjects();
         $this->updateStats($head, $weapon, $armor, $offhand, $feet);
-        
+
         $this->render();
     }
 
     public function getHead($id) {
         $this->load->model('HeadgearModel');
         $head = $this->HeadgearModel->get($id);
+        while ($head == NULL) {
+            if ($id <= 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $head = $this->HeadgearModel->get($id);
+        }
         $this->data['headPath'] = $head->Filename;
 
         return $head;
@@ -169,6 +189,16 @@ class Welcome extends Application {
     public function getWeapon($id) {
         $this->load->model('WeaponModel');
         $weapon = $this->WeaponModel->get($id);
+        while ($weapon == NULL) {
+            if ($id < 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $weapon = $this->WeaponModel->get($id);
+        }
         $this->data['weaponPath'] = $weapon->Filename;
 
         return $weapon;
@@ -177,6 +207,16 @@ class Welcome extends Application {
     public function getArmor($id) {
         $this->load->model('ArmorModel');
         $armor = $this->ArmorModel->get($id);
+        while ($armor == NULL) {
+            if ($id < 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $armor = $this->ArmorModel->get($id);
+        }
         $this->data['armorPath'] = $armor->Filename;
 
         return $armor;
@@ -185,6 +225,16 @@ class Welcome extends Application {
     public function getOffhand($id) {
         $this->load->model('OffhandModel');
         $offhand = $this->OffhandModel->get($id);
+        while ($offhand == NULL) {
+            if ($id < 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $offhand = $this->OffhandModel->get($id);
+        }
         $this->data['offhandPath'] = $offhand->Filename;
 
         return $offhand;
@@ -193,6 +243,16 @@ class Welcome extends Application {
     public function getFeet($id) {
         $this->load->model('FootwearModel');
         $feet = $this->FootwearModel->get($id);
+        while ($feet == NULL) {
+            if ($id < 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $feet = $this->FootwearModel->get($id);
+        }
         $this->data['footwearPath'] = $feet->Filename;
 
         return $feet;
