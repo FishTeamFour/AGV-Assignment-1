@@ -15,6 +15,9 @@
                     <li><a id="homeLink" href="/welcome">Home</a></li>
                     <li><a id="catalogLink" href="/catalog">Catalog</a></li>
                     <li><a id="aboutLink" href="/about">About</a></li>
+                    <li><a id="admin" href="#">Admin</a></li>
+                    <li><a id="user" href="#">User</a></li>
+                    <li><a class="active" id="guest" href="#">Guest</a></li>
                 </ul>
             </div>
 
