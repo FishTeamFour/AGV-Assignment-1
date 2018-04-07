@@ -115,6 +115,14 @@
                         {hp}
                     </td>
                 </tr>
+                <tr>
+                    <th>
+                        Current Role: 
+                    </th>
+                    <td>
+                        {role}
+                    </td>
+                </tr>
             </table>
         </td>
     </tr>
@@ -127,5 +135,18 @@
             <a href="javascript:void(0)" onclick="selectSet({id})">{idText}</a>
             {/set}
         </div>
+    </div>
+    <div>
+        <form action="/welcome/newSet" method="post">
+            <input type="hidden" name="id" value="">
+            <input type="hidden" name="head" value="{currHead}">
+            <input type="hidden" name="weapon" value="{currWeapon}">
+            <input type="hidden" name="armor" value="{currArmor}">
+            <input type="hidden" name="offhand" value="{currOffhand}">
+            <input type="hidden" name="feet" value="{currFeet}">
+            Set Name:
+            <input type="text" name="name">
+            <input type="submit" value="Save Set">
+        </form>
     </div>
 </div>

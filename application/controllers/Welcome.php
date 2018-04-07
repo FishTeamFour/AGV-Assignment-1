@@ -24,6 +24,34 @@ class Welcome extends Application {
         //$this->render();
     }
 
+    function newSet() {
+        if ($this->session->userdata('userrole') == 'Guest') {
+            redirect($_SERVER['HTTP_REFERER']);
+            return;
+        }
+        $this->load->model('SetModel');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules($this->SetModel->rules());
+        $newSet = (array) $this->SetModel->create();
+
+        $newSet = $this->input->post();
+
+        $newSet = (object) $newSet;
+
+        if ($this->form_validation->run()) {
+            if (empty($newSet->id)) {
+                $newSet->id = $this->SetModel->highest() + 1;
+                $this->SetModel->add($newSet);
+            } else {
+                $this->SetModel->update($newSet);
+            }
+        } else {
+            
+        }
+
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+
     public function loadObjects() {
         $this->load->model('SetModel');
         $all_sets = $this->SetModel->all();
@@ -31,7 +59,7 @@ class Welcome extends Application {
 
         foreach ($all_sets as $curr_set) {
             array_push($set_array, array(
-                "id" => $curr_set->SetID,
+                "id" => $curr_set->id,
                 "idText" => $curr_set->Name)
             );
         }
@@ -123,6 +151,9 @@ class Welcome extends Application {
         $this->loadObjects();
         $this->updateStats($head, $weapon, $armor, $offhand, $feet);
 
+
+        $this->data['role'] = $this->session->userdata('userrole');
+
         $this->render();
     }
 
@@ -165,6 +196,8 @@ class Welcome extends Application {
         $this->loadObjects();
         $this->updateStats($head, $weapon, $armor, $offhand, $feet);
 
+        $this->data['role'] = $this->session->userdata('userrole');
+        
         $this->render();
     }
 
