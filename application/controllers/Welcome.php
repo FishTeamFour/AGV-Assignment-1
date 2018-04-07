@@ -24,6 +24,34 @@ class Welcome extends Application {
         //$this->render();
     }
 
+    function newSet() {
+        if ($this->session->userdata('userrole') == 'Guest') {
+            redirect($_SERVER['HTTP_REFERER']);
+            return;
+        }
+        $this->load->model('SetModel');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules($this->SetModel->rules());
+        $newSet = (array) $this->SetModel->create();
+
+        $newSet = $this->input->post();
+
+        $newSet = (object) $newSet;
+
+        if ($this->form_validation->run()) {
+            if (empty($newSet->id)) {
+                $newSet->id = $this->SetModel->highest() + 1;
+                $this->SetModel->add($newSet);
+            } else {
+                $this->SetModel->update($newSet);
+            }
+        } else {
+            
+        }
+
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+
     public function loadObjects() {
         $this->load->model('SetModel');
         $all_sets = $this->SetModel->all();
@@ -31,8 +59,8 @@ class Welcome extends Application {
 
         foreach ($all_sets as $curr_set) {
             array_push($set_array, array(
-                "id" => $curr_set->SetID,
-                "idText" => $curr_set->SetID)
+                "id" => $curr_set->id,
+                "idText" => $curr_set->Name)
             );
         }
         $this->data['set'] = $set_array;
@@ -44,10 +72,10 @@ class Welcome extends Application {
         foreach ($all_head as $curr_head) {
             array_push($head_array, array(
                 "id" => $curr_head->HeadgearID,
-                "idText" => $curr_head->HeadgearID)
+                "idText" => $curr_head->Name)
             );
         }
-        $this->data['head'] = $set_array;
+        $this->data['head'] = $head_array;
 
         $this->load->model('WeaponModel');
         $all_weapon = $this->WeaponModel->all();
@@ -56,7 +84,7 @@ class Welcome extends Application {
         foreach ($all_weapon as $curr_weapon) {
             array_push($weapon_array, array(
                 "id" => $curr_weapon->WeaponID,
-                "idText" => $curr_weapon->WeaponID)
+                "idText" => $curr_weapon->Name)
             );
         }
         $this->data['weapon'] = $weapon_array;
@@ -68,7 +96,7 @@ class Welcome extends Application {
         foreach ($all_armor as $curr_armor) {
             array_push($armor_array, array(
                 "id" => $curr_armor->ArmorID,
-                "idText" => $curr_armor->ArmorID)
+                "idText" => $curr_armor->Name)
             );
         }
         $this->data['armor'] = $armor_array;
@@ -80,7 +108,7 @@ class Welcome extends Application {
         foreach ($all_offhand as $curr_offhand) {
             array_push($offhand_array, array(
                 "id" => $curr_offhand->OffhandID,
-                "idText" => $curr_offhand->OffhandID)
+                "idText" => $curr_offhand->Name)
             );
         }
         $this->data['offhand'] = $offhand_array;
@@ -92,7 +120,7 @@ class Welcome extends Application {
         foreach ($all_feet as $curr_feet) {
             array_push($feet_array, array(
                 "id" => $curr_feet->FootwearID,
-                "idText" => $curr_feet->FootwearID)
+                "idText" => $curr_feet->Name)
             );
         }
         $this->data['feet'] = $feet_array;
@@ -103,6 +131,16 @@ class Welcome extends Application {
 
         $this->load->model('SetModel');
         $setData = $this->SetModel->get($id);
+        while ($setData == NULL) {
+            if ($id <= 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $setData = $this->SetModel->get($id);
+        }
         $head = $this->getHead($setData->HeadgearID);
         $weapon = $this->getWeapon($setData->WeaponID);
         $armor = $this->getArmor($setData->ArmorID);
@@ -112,48 +150,53 @@ class Welcome extends Application {
         $this->setCurrent($head, $weapon, $armor, $offhand, $feet);
         $this->loadObjects();
         $this->updateStats($head, $weapon, $armor, $offhand, $feet);
-        
+
+
+        $this->data['role'] = $this->session->userdata('userrole');
+
         $this->render();
     }
-    
-    public function setCurrent($head, $weapon, $armor, $offhand, $feet){
+
+    public function setCurrent($head, $weapon, $armor, $offhand, $feet) {
         $this->data['currHead'] = $head->HeadgearID;
         $this->data['currWeapon'] = $weapon->WeaponID;
         $this->data['currArmor'] = $armor->ArmorID;
         $this->data['currOffhand'] = $offhand->OffhandID;
         $this->data['currFeet'] = $feet->FootwearID;
     }
-    
-    public function updateStats($head, $weapon, $armor, $offhand, $feet){
+
+    public function updateStats($head, $weapon, $armor, $offhand, $feet) {
         $this->data['atk'] = $head->Attack + $weapon->Attack + $armor->Attack + $offhand->Attack + $feet->Attack;
         $this->data['def'] = $head->Defense + $weapon->Defense + $armor->Defense + $offhand->Defense + $feet->Defense;
         $this->data['hp'] = $head->Health + $weapon->Health + $armor->Health + $offhand->Health + $feet->Health;
     }
-    
-    public function updateItem($id_list){
+
+    public function updateItem($id_list) {
         $ids = explode("-", $id_list);
         $this->updateGear($ids[0], $ids[1], $ids[2], $ids[3], $ids[4]);
     }
 
     public function updateGear($headID, $weaponID, $armorID, $offhandID, $feetID) {
         $this->data['pagebody'] = 'welcome';
-        
-        
+
+
         $this->load->model('HeadgearModel');
         $this->load->model('WeaponModel');
         $this->load->model('ArmorModel');
         $this->load->model('OffhandModel');
         $this->load->model('FootwearModel');
-        
+
         $head = $this->getHead($headID);
         $armor = $this->getArmor($armorID);
         $weapon = $this->getWeapon($weaponID);
         $offhand = $this->getOffhand($offhandID);
         $feet = $this->getFeet($feetID);
-        
+
         $this->setCurrent($head, $weapon, $armor, $offhand, $feet);
         $this->loadObjects();
         $this->updateStats($head, $weapon, $armor, $offhand, $feet);
+
+        $this->data['role'] = $this->session->userdata('userrole');
         
         $this->render();
     }
@@ -161,6 +204,16 @@ class Welcome extends Application {
     public function getHead($id) {
         $this->load->model('HeadgearModel');
         $head = $this->HeadgearModel->get($id);
+        while ($head == NULL) {
+            if ($id <= 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $head = $this->HeadgearModel->get($id);
+        }
         $this->data['headPath'] = $head->Filename;
 
         return $head;
@@ -169,6 +222,16 @@ class Welcome extends Application {
     public function getWeapon($id) {
         $this->load->model('WeaponModel');
         $weapon = $this->WeaponModel->get($id);
+        while ($weapon == NULL) {
+            if ($id < 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $weapon = $this->WeaponModel->get($id);
+        }
         $this->data['weaponPath'] = $weapon->Filename;
 
         return $weapon;
@@ -177,6 +240,16 @@ class Welcome extends Application {
     public function getArmor($id) {
         $this->load->model('ArmorModel');
         $armor = $this->ArmorModel->get($id);
+        while ($armor == NULL) {
+            if ($id < 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $armor = $this->ArmorModel->get($id);
+        }
         $this->data['armorPath'] = $armor->Filename;
 
         return $armor;
@@ -185,6 +258,16 @@ class Welcome extends Application {
     public function getOffhand($id) {
         $this->load->model('OffhandModel');
         $offhand = $this->OffhandModel->get($id);
+        while ($offhand == NULL) {
+            if ($id < 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $offhand = $this->OffhandModel->get($id);
+        }
         $this->data['offhandPath'] = $offhand->Filename;
 
         return $offhand;
@@ -193,6 +276,16 @@ class Welcome extends Application {
     public function getFeet($id) {
         $this->load->model('FootwearModel');
         $feet = $this->FootwearModel->get($id);
+        while ($feet == NULL) {
+            if ($id < 0) {
+                $id = 1;
+            } elseif (!is_numeric($id)) {
+                $id = 1;
+            } else {
+                $id = $id - 1;
+            }
+            $feet = $this->FootwearModel->get($id);
+        }
         $this->data['footwearPath'] = $feet->Filename;
 
         return $feet;
