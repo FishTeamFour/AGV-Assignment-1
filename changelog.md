@@ -39,3 +39,4 @@ Sam:    Added roles to nav bar
 Josh:   Updated set and accessory dropdowns to  display names of sets/items
 Josh:   Server side validation for accessory and set changes
 Sam:    Added Role controller
+Josh:   Added user role privileges. Users that are not guest can add new sets
